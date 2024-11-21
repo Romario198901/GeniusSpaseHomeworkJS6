@@ -1,0 +1,1 @@
+# GeniusSpaseHomeworkJS6
