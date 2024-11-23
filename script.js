@@ -9,7 +9,36 @@
     constructor(abonents) {
         this.abonents = abonents;
     }
-}
+    addAbonent(name, phone) {
+    this.abonents = this.abonents.push({name,phone});
+    console.log( 'Контакт ${name} з номером ${phone} додано');
+    }
+    deleteAbonent(name,phone) {
+    this.abonents = this.abonents.filter(abonent => abonent.name !== name);
+    console.log(`Контакт ${name} видалено`);
+    }
+    findAbonent(name,phone) {
+    this.abonents = this.abonents.find(abonent => abonent.name === name);
+    if(abonent) {
+    console.log( 'Контакт ${abonent.name} з номером {contact.phone} знайдено');
+    }
+    else {
+    comsole.log( `Контакт ${name} не знайдено`);
+    }
+    }
+    listAbonents() {
+    if(this.abonents.length === 0) {
+    console.log(`Телефонна книга порожня`);
+    }
+    else { 
+    console.log (`Список контактів`);
+    this.abonents.forEach(abonent => {
+    console.log(`Ім'я ${abonent.name}, номер ${abonent.phone}`);
+    });
+    }
+    }
+    }
+
 class Abonent {
     constructor(props) {
         this.name = props.name;
